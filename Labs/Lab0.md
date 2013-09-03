@@ -2,11 +2,15 @@
 
 [Logisim](http://ozark.hendrix.edu/~burch/logisim/) is a circuit simulator. Download it!
 
+## Overview
+
 Git is a popular distributed version control system that we will use in this course. Git tracks changes (commits) to a project (repository) over time and decouples recording changes from publishing (pushing) changes.
 
 In this lab, you will download, install and configure Git so that you can commit (record changes) and push (submit changes) privately to your choice of project host (Bitbucket or Github), and practice Git basics. While the professor's Git repository is publicly available, you will make your Git repository private on the project host but share it with me. Therefore, anything you submit to project host for this repository will be visible only to you and me, but nobody else.
 
 These instructions assume that you are using Windows, but should work fine on Mac or Linux. All errors and omissions are mine. Feel free to share your improvements to these instructions (pull requests are welcome).
+
+# Download, install and configure git
 
 First, [download and install Git from here](http://git-scm.com). With one exception, the default settings in the installer are fine, so click *Next*, *Continue*, or *Finish* to move along. When it is an option, be sure to select **Run Git and included Unix tools from the Windows Command Prompt**. This will allow you to use Git outside Git Bash if you wish to do so.
 
@@ -33,6 +37,8 @@ Next, copy the public key to the clipboard using one of the commands below. Reme
 
 At this point, you are done downloading, installing and configuring Git. Yay!
 
+## Set up an account on a project host
+
 Next, choose a project host, but don't create an account just yet (read on for why). The choices are [Bitbucket](http://bitbucket.org) or [Github](http://github.com). I use both project hosts, but you can use just one. Bitbucket gives you free private repositories by default, so it's easy to set up. However, Github has a much slicker interface but requires that you [request private repositories for educational purposes as a student](http://github.com/edu). Github's turn around time is short, but the start of a semester is the busiest time for this. If you choose Github, after you create an account, you will [request private repositories as a student](http://github.com/edu) and then make the repository you create private later. You need to ensure that your repository is private, otherwise I won't post feedback to you.
 
 Did you choose a project host? Great! Go ahead and create an account using your *@wit.edu* email address and real name. Once you set up an account successfully, [complete this form](https://docs.google.com/forms/d/1lsSvVQVRlnIKl8qp5sSWwy-BgxyqnYGEvDzGLoQXV28/viewform) so that I know where to look for your work. If you feel like it, you can set up a [Gravatar](http://en.gravatar.com/) with your *@wit.edu* email address so that everyone can associate your user name with your face.
@@ -40,6 +46,8 @@ Did you choose a project host? Great! Go ahead and create an account using your 
 You will need to share the public SSH key you created earlier with the project host. If you haven't copy/pasted anything in the interim, you should be good to go. Bitbucket users: navigate to your user (in the upper right corner) -> Manage account -> SSH keys; [Github users go here](https://github.com/settings/ssh). Click Add key, and then paste in your public SSH key into the key field. For the title, use a nickname for your machine (e.g., laptop).
 
 At this point, you have set up your account on a project host. Huzzah!
+
+## Create your course repositories
 
 You now need to create a Git repository on your machine to save (commit) your work and get material from me. Copy/paste the following commands into the command prompt (don't even think about typing it in manually). Speaking of which, to paste into a command prompt in Windows, press Insert on the keyboard (Ctrl-V doesn't work); if that doesn't work, right click the command prompt window title, select Edit -> Paste.
 
@@ -63,15 +71,21 @@ Once created, the project host will offer instructions for the command prompt (B
 
 	git push -u origin master
 
-If it asks for your password, you didn't set up the SSH keys properly. If this happens, don't fret, you can still type in your project host password and press Enter (or go back and fix it). By the way, don't expect to see anything as you type in your password, nothing will appear (it's not broken, it's a security feature).
+If it asks for your password, you didn't set up the SSH keys properly. If this happens, don't fret, you can still type in your project host password and press Enter (or go back and fix your SSH keys). By the way, don't expect to see anything as you type in your password, nothing will appear (it's not broken, it's a security feature).
 
 If all goes well, when you reload your Bitbucket or Github repository page, you will see course greetings. This indicates that you successfully cloned my repository on your machine and pushed it over to the project host. Later on, if you ever wonder if you were able to push something over successfully, you can take a look at your repository on the project host. Those of you in the know may ask: why not just fork my repsitory? The answer: because Github won't allow you to fork a public repository into a private repository.
+
+At this point, your local and remote repsitories are set up! Hooray!
+
+## Share your repository with me, and watch my repository
 
 I'd like to take a peek at your repository, but I can't! Indeed, nobody but you can see it (hence the term private). You need to add me as a collaborator to your private repository so I can see all the hard work that you're up to. Bitbucket users: click the gear icon (It's **Administration**), select **Access management**, enter `lawrancej` under Users, select **Admin**, and click Add. Github users: click the wrench and screwdriver icon (It's **Settings**, not **Account settings**), click **Collaborators**, enter `lawrancej`, and click Add.
 
 Now that I can see you, why don't you watch my repository, so you know whenever I make updates? I make updates frequently, and I won't email you when I make changes. On [Bitbucket](https://bitbucket.org/lawrancej/comp278) or [Github](https://github.com/lawrancej/COMP278), click on the eye icon to watch my repository.
 
-At this point, your local and remote repsitories are set up! Hooray!
+Now we can see each other's stuff. Sweet!
+
+## Practice committing and pushing work
 
 We just need to ensure that you can commit work to wrap up this lab.
 
@@ -117,6 +131,8 @@ This is the command you will use whenever you are ready to submit your work or w
 
 And with that, you just completed lab 0. Booyah!
 
+## Get course updates
+
 By the way, I will post new material frequently. Pull (fetch and merge) to receive updates.
 
 	git pull origin master
@@ -139,7 +155,7 @@ If you are thoroughly confused, examine the complete history to see what's going
 
 **Note:** Even though you have removed conflict markers, you must still add files to git and commit as usual to resolve the merge conflict.
 
-# References
+## References
 
 * [Atlassian Git Tutorials](http://www.atlassian.com/git/)
 * [Pro Git](http://git-scm.com/book)
