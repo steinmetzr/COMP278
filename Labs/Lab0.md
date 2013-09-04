@@ -1,10 +1,12 @@
 # Lab 0: Logisim and Git setup
 
+## Logisim setup
+
 [Logisim](http://ozark.hendrix.edu/~burch/logisim/) is a circuit simulator. Download it!
 
-## Overview
+## Git setup
 
-Git is a popular distributed version control system that we will use in this course. Git tracks changes (commits) to a project (repository) over time and decouples recording changes from publishing (pushing) changes.
+Git is a popular distributed version control system that we will use in this course. Git tracks changes (commits) to a project (repository) over time and decouples recording changes from publishing (pushing) changes. This means that you can record work on a project and then decide later when to publish your work, unlike predecessor version control systems such as CVS and Subversion.
 
 In this lab, you will download, install and configure Git so that you can commit (record changes) and push (submit changes) privately to your choice of project host (Bitbucket or Github), and practice Git basics. While the professor's Git repository is publicly available, you will make your Git repository private on the project host but share it with me. Therefore, anything you submit to project host for this repository will be visible only to you and me, but nobody else.
 
@@ -14,9 +16,22 @@ These instructions assume that you are using Windows, but should work fine on Ma
 
 First, [download and install Git from here](http://git-scm.com). With one exception, the default settings in the installer are fine, so click *Next*, *Continue*, or *Finish* to move along. When it is an option, be sure to select **Run Git and included Unix tools from the Windows Command Prompt**. This will allow you to use Git outside Git Bash if you wish to do so.
 
-Also, [download and install TortoiseGit](http://code.google.com/p/tortoisegit/). The default settings in that installer are fine, so click to move the installer along. TortoiseGit allows you to commit and push your work directly to the project host from Windows Explorer, and also includes a nice diff viewer and merge tool. Similar tools for Mac/Linux include GitX, KDiff3, and Meld.
+Also, [download and install TortoiseGit](http://code.google.com/p/tortoisegit/). The default settings in that installer are fine, so click to move the installer along. TortoiseGit allows you to commit and push your work directly to the project host from the Windows File Explorer, and also includes a nice diff viewer and merge tool. Similar tools for Mac/Linux include [GitX](http://gitx.frim.nl/), [KDiff3](http://kdiff3.sourceforge.net/), and [Meld](http://meldmerge.org/).
 
-Once Git is installed, you will need to open the command prompt and keep it open for the duration of this lab. From the Start Menu, open Git Bash: **Start -> All Programs -> Git -> Git Bash**. In Mac/Linux, open **Terminal**. You will see a window with text inside; this is the command prompt. 
+Once Git is installed, you will need to open the command prompt and keep it open for the duration of this lab. From the Start Menu, open Git Bash: **Start -> All Programs -> Git -> Git Bash**. In Mac/Linux, open **Terminal**. You will see a window with text inside; this is the command prompt. When you open the command prompt, you will see something like this:
+
+	lawrancej@WITR9EZ83Y ~
+	$
+
+Let's understand what this means. The first line lists your username, machine name, and current folder (`~` pronounced tilde, means home directory). By default, the command prompt is open in your home directory. The next line is the command prompt; anything you type will appear after the `$`. You can see your home directory Windows File explorer by navigating to the Desktop and clicking on your name, or you can type in the following and press enter to bring up the File Explorer:
+
+	start .
+
+You can also see what's in your folder at the command prompt by typing in the following:
+
+	ls
+
+Sometimes in this lab, I will present a command with a comment. In the command prompt, everything after a `#` on a line is a comment, like how `//` works in C++ and Java.
 
 Git doesn't know you (and don't worry if you don't know Git just yet), so introduce yourself to Git. In the command prompt, tell Git who you are (use your name and school email address). Type in something like the following (replace my name and email with yours).
 
@@ -39,7 +54,7 @@ At this point, you are done downloading, installing and configuring Git. Yay!
 
 ## Set up an account on a project host
 
-Next, choose a project host, but don't create an account just yet (read on for why). The choices are [Bitbucket](http://bitbucket.org) or [Github](http://github.com). I use both project hosts, but you can use just one. Bitbucket gives you free private repositories by default, so it's easy to set up. However, Github has a much slicker interface but requires that you [request private repositories for educational purposes as a student](http://github.com/edu). Github's turn around time is short, but the start of a semester is the busiest time for this. If you choose Github, after you create an account, you will [request private repositories as a student](http://github.com/edu) and then make the repository you create private later. You need to ensure that your repository is private, otherwise I won't post feedback to you.
+Next, choose a project host, but don't create an account just yet (read on for why). The choices are [Bitbucket](http://bitbucket.org) or [Github](http://github.com). I use both project hosts, but you can use just one. Bitbucket gives you free private repositories by default, so it's easy to set up. However, Github has a much slicker interface but requires that you [request private repositories for educational purposes as a student](http://github.com/edu), unless money is no object for you. Github's turn around time is short; however, the start of a semester is the busiest time for this, and an actual person reviews all requests from students. **You need to ensure that your repository is private, otherwise I won't post feedback to you.**
 
 Did you choose a project host? Great! Go ahead and create an account using your *@wit.edu* email address and real name. Once you set up an account successfully, [complete this form](https://docs.google.com/forms/d/1lsSvVQVRlnIKl8qp5sSWwy-BgxyqnYGEvDzGLoQXV28/viewform) so that I know where to look for your work. If you feel like it, you can set up a [Gravatar](http://en.gravatar.com/) with your *@wit.edu* email address so that everyone can associate your user name with your face.
 
@@ -47,12 +62,12 @@ You will need to share the public SSH key you created earlier with the project h
 
 At this point, you have set up your account on a project host. Huzzah!
 
-## Create your course repositories
+## Create your local course repository
 
 You now need to create a Git repository on your machine to save (commit) your work and get material from me. Copy/paste the following commands into the command prompt (don't even think about typing it in manually). Speaking of which, to paste into a command prompt in Windows, press Insert on the keyboard (Ctrl-V doesn't work); if that doesn't work, right click the command prompt window title, select Edit -> Paste.
 
 	git init COMP278 # Create local git repository
-	cd COMP278
+	cd COMP278       # Change directory (cd) into the COMP278 folder
 	git remote add upstream https://github.com/lawrancej/COMP278.git
 	git pull upstream master # Pull from the professor (upstream)
 
@@ -63,25 +78,31 @@ If you see something like the following, then everything worked fine.
 	remote: Total 12 (delta 1), reused 0 (delta 0)
 	Unpacking objects: 100% (12/12), done.
 
-The commands you just entered cloned a copy of my repository onto your machine in the COMP278 folder. You can access this folder in the Windows File Explorer by navigating to Desktop -> Your User Name -> COMP278. You can also bring up this folder by typing in `start .` at the command prompt. Those of you in the know may ask: why not just do a git clone instead? The answer: because I want to be `upstream`, not `origin`. 
+Let's understand what these commands mean before we move on. The first command (`git init`) created a local git repository into a new folder called COMP278. Git saves all project history in that folder in a hidden subdirectory called `.git`. Then, we entered the repository folder. Next, we told git about my repository at github (calling it `upstream`), but we did not yet download anything from the provided URL. The last command (`git pull`) downloaded my repository into your local repository and merged it into your master (default) branch. These four commands have almost the same effect as `git clone https://github.com/lawrancej/COMP278.git && cd COMP278`, but we didn't do that because I want your remote repository to be called `origin` and mine `upstream`. We'll get to that in a moment.
+
+At this point, you created your local course repository. Woo hoo!
+
+## Create your remote repository
 
 Now let's create a remote private repository on the project host to submit your work. On [Bitbucket](https://bitbucket.org/repo/create) or [Github](https://github.com/new), create a new empty **private** repository called **COMP278**. Aside from setting the repository private, don't play around with the other settings, just go with the defaults (DO NOT initialize the repository with a README).
 
-Once created, the project host will offer instructions for the command prompt (Bitbucket users: pretend you are starting from scratch). We only need to run one command: find the line in the instructions that says `git remote add origin ...` and copy/paste it into the command prompt and press enter. Then, type in the following at the command prompt and press enter.
+If you are using Github, and it asks you for money, just make the repository public for now. Don't forget to [request private repositories as a student](http://github.com/edu), and when Github confirms that you are free to do so, make the repository you created private later by clicking on the wrench and screwdriver icon (it's **Settings**, not **Account settings**) and scroll down to the **Danger Zone** and click **Make private**. 
+
+Once created, you will see your new remote repository on the project host, and you need to study this page carefully. Go ahead and bookmark or star this page in your browser so you can get back to it later. On this page, the you will see instructions for command prompt, but don't type it in just yet (Bitbucket users: pretend you are starting from scratch). We only need to run one command: find the line in the instructions that says `git remote add origin ...` and copy/paste it into the command prompt and press enter. Then, type in the following at the command prompt and press enter.
 
 	git push -u origin master
 
-If it asks for your password, you didn't set up the SSH keys properly. If this happens, don't fret, you can still type in your project host password and press Enter (or go back and fix your SSH keys). By the way, don't expect to see anything as you type in your password, nothing will appear (it's not broken, it's a security feature).
+If it asks for your password, you didn't set up the SSH keys properly. If this happens, don't fret, you can still type in your project host password and press Enter (or go back and fix your SSH keys). By the way, don't expect to see anything as you type in your password, nothing will appear (it's not broken, that's a security feature).
 
-If all goes well, when you reload your Bitbucket or Github repository page, you will see course greetings. This indicates that you successfully cloned my repository on your machine and pushed it over to the project host. Later on, if you ever wonder if you were able to push something over successfully, you can take a look at your repository on the project host. Those of you in the know may ask: why not just fork my repsitory? The answer: because Github won't allow you to fork a public repository into a private repository.
+Reload your Bitbucket or Github repository page. If all goes well, you see **Welcome to COMP278**. This indicates that you successfully cloned my repository on your machine and pushed it over to your private repository on the project host. Later on, if you ever wonder if you were able to push something over successfully, you can take a look at your repository on the project host. Those of you in the know may ask: why not just fork my repsitory instead? The answer: because Github won't allow you to fork a public repository into a private repository.
 
 At this point, your local and remote repsitories are set up! Hooray!
 
 ## Share your repository with me, and watch my repository
 
-I'd like to take a peek at your repository, but I can't! Indeed, nobody but you can see it (hence the term private). You need to add me as a collaborator to your private repository so I can see all the hard work that you're up to. Bitbucket users: click the gear icon (It's **Administration**), select **Access management**, enter `lawrancej` under Users, select **Admin**, and click Add. Github users: click the wrench and screwdriver icon (It's **Settings**, not **Account settings**), click **Collaborators**, enter `lawrancej`, and click Add.
+I'd like to take a peek at your repository, but I can't! Indeed, nobody but you can see it (hence the term private). You need to add me as a collaborator to your private repository so that I can see all the hard work that you're up to. Bitbucket users: click the gear icon (It's **Administration**), select **Access management**, enter `lawrancej` under Users, select **Admin**, and click Add. Github users: click the wrench and screwdriver icon (It's **Settings**, not **Account settings**), click **Collaborators**, enter `lawrancej`, and click Add.
 
-Now that I can see you, why don't you watch my repository, so you know whenever I make updates? I make updates frequently, and I won't email you when I make changes. On [Bitbucket](https://bitbucket.org/lawrancej/comp278) or [Github](https://github.com/lawrancej/COMP278), click on the eye icon to watch my repository.
+Now that I can see you, why don't you watch my repository, so you know whenever I make updates? I make updates frequently, and I won't email you when I make changes. [Bitbucket users go here](https://bitbucket.org/lawrancej/comp278). [Github users go here](https://github.com/lawrancej/COMP278). On my repository page, click on the eye icon to watch my repository.
 
 Now we can see each other's stuff. Sweet!
 
