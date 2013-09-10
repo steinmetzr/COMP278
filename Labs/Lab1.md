@@ -44,9 +44,9 @@ Notice how the place values in decimal are just powers of ten. So, 10 squared is
 
 In all number bases, the place values are just powers of the base. For example, the binary number 1011.1 has the following bits (binary digits) and place values.
 
-Binary Digit | 1   | 0  | 1  | 1  | .           | 1
------------- | --- | -- | -- | -- | ----------- | ---
-Place value  | 8   | 4  | 2  | 1  | radix point | 0.5
+Bit          | 1   | 0   | 1   | 1   | .           | 1
+------------ | --- | --- | --- | --- | ----------- | ---
+Place value  | 8   | 4   | 2   | 1   | radix point | 0.5
 
 Notice how the place values in binary are powers of two.  Binary number 1011.1 is 8 * 1 + 4 * 0 + 1 * 2 + 1 * 1 + 1 * 0.5, or 11.5 in decimal. This is how we convert from binary to decimal.
 
@@ -128,9 +128,9 @@ To convert a decimal number to binary, make change with powers of two. For examp
 
 At this point, to write out the binary number, just place a 1 corresponding to each place value we subtracted away, and zero elsewhere.
 
-Digit         | 1   | 0   | 0  | 0  | 1  | 0 | 1 | 1 | 0 | .           | 0   | 0    | 0     | 1      | 1
-------------- | --- | --- | -- | -- | -- | - | - | - | - | ----------- | --- | ---- | ----- | ------ | -------
-Place value   | 256 | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 | Radix point | 0.5 | 0.25 | 0.125 | 0.0625 | 0.03125
+Digit         | 1   | 0   | 0   | 0   | 1   | 0   | 1   | 1   | 0   | .           | 0   | 0    | 0     | 1      | 1
+------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ----------- | --- | ---- | ----- | ------ | -------
+Place value   | 256 | 128 | 64  | 32  | 16  | 8   | 4   | 2   | 1   | Radix point | 0.5 | 0.25 | 0.125 | 0.0625 | 0.03125
 
 You may think: "Hey, we're not done yet!" You're right, the binary number above is not exactly 278.1 in decimal, but it is worth noting that some fractional numbers cannot be represented exactly. For example, 1/3 in decimal is 0.3333.... We cannot represent that number in decimal, and decimal numbers such as 0.65 cannot be represented exactly in binary. This is why we care about precision when dealing with floating point numbers, and why you shouldn't use float or double for currency.
 
@@ -222,17 +222,17 @@ To represent signed integers purely in binary, we will use what's known as two's
 
 To represent an integer in two's complement, we fix the width of the number (typically 32 or 64 bits on modern CPUs), and negate the most significant place value. For example, if we're dealing with 8 bit signed integers we'd have the following place values.
 
-Bit    | 0    | 0  | 0  | 1  | 1 | 0 | 1 | 0 
------- | ---- | -- | -- | -- | - | - | - | -
-Place  | -128 | 64 | 32 | 16 | 8 | 4 | 2 | 1
+Bit    | 0    | 0   | 0   | 1   | 1   | 0   | 1   | 0 
+------ | ---- | --- | --- | --- | --- | --- | --- | ---
+Place  | -128 | 64  | 32  | 16  | 8   | 4   | 2   | 1
 
 The number above, 0b11010 is 26 in decimal. It's easy enough to negate this number in decimal, just add a negative sign to the front (-26). 
 
-To negate a number represented in two's complement, we work from right to left and copy all zeroes until we see a 1; then, we copy the first 1, and flip the remaining bits to the right of the 1 we encountered. Let's see how to represent -0b11010 using two's complement:
+To negate a number represented in two's complement, we work from right to left and copy all zeroes until we see a 1; then, we copy the first 1, and flip the remaining bits to the left of the 1 we encountered. Let's see how to represent -0b11010 using two's complement:
 
-Bit    | 1    | 1  | 1  | 0  | 0 | 1 | 1 | 0 
------- | ---- | -- | -- | -- | - | - | - | -
-Place  | -128 | 64 | 32 | 16 | 8 | 4 | 2 | 1
+Bit    | 1    | 1   | 1   | 0   | 0   | 1   | 1   | 0 
+------ | ---- | --- | --- | --- | --- | --- | --- | ---
+Place  | -128 | 64  | 32  | 16  | 8   | 4   | 2   | 1
 
 Let's convert this number to decimal to verify that we get -26 in decimal. We need to keep in mind that the most significant bit has its sign flipped (-128). To keep things simple, let's add the positive place values before we subtract away 128.
 
