@@ -8,15 +8,17 @@ These instructions assume that you are using Windows, but should work fine on Ma
 
 ## Git setup
 
-Git is a popular distributed version control system that we will use in this course. Git tracks changes (commits) to a project (repository) over time and decouples recording changes from publishing (pushing) changes. This means that you can record work on a project and then decide later when to publish your work, unlike predecessor version control systems such as CVS and Subversion.
+Git is a popular distributed version control system that we will use in this course in lieu of Blackboard. Git tracks changes (commits) to a project (repository) over time and decouples recording changes from publishing (pushing) changes. This means that you can record work on a project and then decide later when to publish your work, unlike predecessor version control systems such as CVS and Subversion.
 
-In this lab, you will download, install and configure Git so that you can commit (record changes) and push (submit changes) privately to your choice of project host (Bitbucket or Github), and practice Git basics. While the professor's Git repository is publicly available, you will make your Git repository private on the project host but share it with me. Therefore, anything you submit to project host for this repository will be visible only to you and me, but nobody else.
+In this lab, you will download, install and configure Git so that you can commit (record changes) and push (submit changes) privately to your choice of project host (Bitbucket or Github), and practice Git basics. While the professor's Git repository is publicly available, you will make your Git repository private on the project host but share it with me. Therefore, anything you submit to the project host for this repository will be visible only to you and me, but nobody else.
 
-# Download, install and configure git
+## Download, install and configure Git
 
 First, [download and install Git from here](http://git-scm.com). With one exception, the default settings in the installer are fine, so click *Next*, *Continue*, or *Finish* to move along. When it is an option, be sure to select **Run Git and included Unix tools from the Windows Command Prompt**. This will allow you to use Git outside Git Bash if you wish to do so.
 
 Also, [download and install TortoiseGit](http://code.google.com/p/tortoisegit/). The default settings in that installer are fine, so click to move the installer along. TortoiseGit allows you to commit and push your work directly to the project host from the Windows File Explorer, and also includes a nice diff viewer and merge tool. Similar tools for Mac/Linux include [GitX](http://gitx.frim.nl/), [KDiff3](http://kdiff3.sourceforge.net/), and [Meld](http://meldmerge.org/).
+
+Let's configure TortoiseGit before we configure Git. From the Start Menu, open TortoiseGit Settings: **Start -> All Programs -> TortoiseGit -> Settings**. Click on Network, then change the SSH client from Plink to `C:\Program Files\Git\bin\ssh.exe`. Make sure that file actually exists on your machine by clicking **Browse** and navigating there; if you can't find it, try starting in the 64 bit Program Files folder. Either way, don't forget to **Apply** your changes before you close Settings.
 
 Once Git is installed, you will need to open the command prompt and keep it open for the duration of this lab. From the Start Menu, open Git Bash: **Start -> All Programs -> Git -> Git Bash**. In Mac/Linux, open **Terminal**. You will see a window with text inside; this is the command prompt. When you open the command prompt, you will see something like this:
 
@@ -95,15 +97,25 @@ Now let's create a remote private repository on the project host to submit your 
 
 If you are using Github, and it asks you for money, just make the repository public for now. Don't forget to [request private repositories as a student](http://github.com/edu), and when Github confirms that you are free to do so, make the repository you created private later by clicking on the wrench and screwdriver icon (it's **Settings**, not **Account settings**) and scroll down to the **Danger Zone** and click **Make private**. 
 
-Once created, you will see your new remote repository on the project host, and you need to study this page carefully. Go ahead and bookmark or star this page in your browser so you can get back to it later. On this page, you will see command prompt instructions, but don't type these in just yet (Bitbucket users: pretend you are starting from scratch). We only need to run one command: find the line in the instructions that says `git remote add origin ...` and copy/paste it into the command prompt and press enter. Then, type in the following at the command prompt and press enter.
+Once created, you will see your new remote repository on the project host, and you need to study this page carefully. Go ahead and bookmark or star this page in your browser so you can get back to it later. On this page, you will see command prompt instructions, but don't type these in just yet. Bitbucket users: pretend you are starting from scratch. Github users: click on **SSH**. We only need to run one command: find the line in the instructions that says `git remote add origin ...` and copy/paste it into the command prompt and press enter. Then, type in the following at the command prompt and press enter to push the contents of your local repository to the project host.
 
-	git push -u origin master
+	git push --all origin
 
-If it asks for your password, you didn't set up the SSH keys properly. If this happens, don't fret, you can still type in your project host password and press Enter (or go back and fix your SSH keys). By the way, don't expect to see anything as you type in your password, nothing will appear (it's not broken, that's a security feature).
+If it asks for your password, type in your project host password and press Enter for now. Don't expect to see anything as you type it in, because nothing will appear (it's not broken, it's a security feature). Either you didn't set up SSH keys properly, or origin isn't an SSH URL. To diagnose the problem, type in `git remote -v` and examine the output. If origin is a URL starting with SSH or GIT, then SSH keys are not set up. If origin is a URL starting with HTTPS, then you need to change the origin URL in a moment; follow the next step first.
 
-Reload your Bitbucket or Github repository page. If all goes well, you see **Welcome to COMP278**. This indicates that you successfully cloned my repository on your machine and pushed it over to your private repository on the project host. Later on, if you ever wonder if you were able to push something over successfully, you can take a look at your repository on the project host. Those of you in the know may ask: why not just fork my repsitory instead? The answer: because Github won't allow you to fork a public repository into a private repository.
+Reload your Bitbucket or Github repository page. If all goes well, you will see **Welcome to COMP278**. This indicates that you successfully cloned my repository on your machine and pushed it over to your private repository on the project host. Later on, if you ever wonder if you were able to push something over successfully, you can take a look at your repository on the project host. Those of you in the know may ask: why not just fork my repsitory instead? The answer: because Github won't allow you to fork a public repository into a private repository.
 
 At this point, your local and remote repsitories are set up! Hooray!
+
+**If git asked for your password earlier during a push**, and you set up SSH keys properly, type in the following to remove the link to origin:
+
+	git remote rm origin
+
+Then, go to your repository page and look for SSH. The URL that you want for origin will start with `git@bitbucket.org` or `git@github.com`. Copy this URL and type in the following command (replacing the comment with your SSH URL) to change your origin URL.
+
+	git remote add origin   # Replace this comment with your SSH URL
+
+Try to push again.
 
 ## Share your repository with me, and watch my repository
 
@@ -168,6 +180,10 @@ By the way, I will post new material frequently. Pull (fetch and merge) to recei
 Occasionally, this command won't work because we made conflicting changes. To fix a merge conflict, look for conflict markers and revise as necessary. This command makes it easier:
 
 	git mergetool
+
+By the way, you may need to select a merge tool (just once) to get this command to work. Assuming you installed TortoiseGit, try this:
+
+	git config --global merge.tool tortoisemerge
 
 If you want to keep only my changes, checkout their version.
 
