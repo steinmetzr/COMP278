@@ -2,7 +2,9 @@
 
 ## Overview: All your number base are belong to us
 
-In lab 1, we will learn how to convert among Binary, Octal, Decimal and Hexadecimal number bases, count in binary and represent integers in binary. To help remember which base is which, it's helpful to know that each of these words has Latin roots in them that other words share. Binary has "bi" in it, meaning two, just like bicycle and bisexual. Octal has "oct" in it, meaning eight, just like octagon (stop sign) and October. If you forgot this piece of historical trivia, October used to be the eighth month before Julius and Augustus Caesar named months after themselves. Decimal has "deci" in it, meaning ten, like December and decimate. December used to be the tenth month just like October was the eighth month, and decimate meant kill one out of every ten soldiers as a punishment for the group (those Romans!). Hexadecimal has "hex" and "deci" in it, and "hex" means six, just like hexagon. Think 6 + 10 = 16.
+In this lab, we will learn how to count in and convert among Binary, Octal, Decimal and Hexadecimal number bases, and represent integers in binary.
+
+> To help remember which base is which, it's helpful to know that each of these words has Latin roots in them that other words share. Binary has "bi" in it, meaning two, just like bicycle and bisexual. Octal has "oct" in it, meaning eight, just like octagon (stop sign) and October. If you forgot this piece of historical trivia, October used to be the eighth month before Julius and Augustus Caesar named months after themselves. Decimal has "deci" in it, meaning ten, like December and decimate. December used to be the tenth month just like October was the eighth month, and decimate meant kill one out of every ten soldiers as a punishment for the group (those Romans!). Hexadecimal has "hex" and "deci" in it, and "hex" means six, just like hexagon. Think 6 + 10 = 16.
 
 ## Why learn other bases?
 
@@ -32,7 +34,7 @@ Base | Name                 | Digits  | Example
 2    | **Bi**nary           | 0,1     | 1010
 8    | **Oct**al            | 0-7     | 12
 10   | **Deci**mal          | 0-9     | 10
-16   | **Hex**a**deci**mal  | 0-9,A-F | A
+16   | **Hex**adecimal      | 0-9,A-F | A
 
 Each digit in a number has a place value. For example, the decimal number 278.1 has four place values and a decimal point (radix point).
 
@@ -64,6 +66,33 @@ For example, the number 1011.1 means one thousand eleven and one tenth, but 0b10
 When we read numbers in bases other than decimal, do not read decimal place values. For example, read 0b1101.1 as binary number one one zero one point one, not one thousand eleven and one tenth, because that's just wrong.
 
 Interestingly enough, 10 in any base means the base itself. Think about why. What's 0b10 in decimal? How'd you know that?
+
+## Counting
+
+Imagine an odometer in your mind as you think about counting in any number base. In any number representation, the digit on the right is the **least significant** and the digit on the left is the **most significant**. Also, remember that it is always possible to prefix any number with zeroes with no effect.
+
+Binary | Hexadecimal | Octal | Decimal
+------ | ----------- | ----- | -------
+0000   |   0         |   0   |    0
+0001   |   1         |   1   |    1
+0010   |   2         |   2   |    2
+0011   |   3         |   3   |    3
+0100   |   4         |   4   |    4
+0101   |   5         |   5   |    5
+0110   |   6         |   6   |    6
+0111   |   7         |   7   |    7
+1000   |   8         |  10   |    8
+1001   |   9         |  11   |    9
+1010   |   A         |  12   |   10
+1011   |   B         |  13   |   11
+1100   |   C         |  14   |   12
+1101   |   D         |  15   |   13
+1110   |   E         |  16   |   14
+1111   |   F         |  17   |   15
+
+As you read from the top to the bottom, notice how in we cycle through all digits faster in the least significant digit than in the most significant digit. For example, as you read the column of numbers in the 1's place for binary numbers, it alternates between 0 and 1, the 2's place alternates between 00 and 11, and the 4's place alternates between 4 zeroes and 4 ones, and the eights place alternates between 8 zeroes and 8 ones. It's no different than how the ones and the tens places look when counting in decimal. In the table above, you should also notice the same pattern for octal numbers: in the 1's place, we cycle from 0-7; in the 8's place, we repeat 0 eight times before repeating 1 eight times, and so forth.
+
+What will the next row in the table above look like?
 
 ## Binary to decimal
 
@@ -138,22 +167,7 @@ Try one yourself. What is 127.75 in binary? Did you notice a pattern? What's 128
 
 ## Binary to Octal
 
-To convert binary to octal (base 8) is much simpler because 8 is an even power of 2. Converting binary to octal involves grouping a binary number in to chunks of three bits from right to left, and converting each three-bit chunk into a number.
-
-Binary | Octal
------- | -----
-000    | 0
-001    | 1
-010    | 2
-011    | 3
-100    | 4
-101    | 5
-110    | 6
-111    | 7
-
-An aside about counting in binary: notice how in the table above, the 1's place alternates between 0 and 1 as you read that column of numbers, and the 2's place alternates between 00 and 11, and the 4's place alternates between 4 zeroes and 4 ones. This is a perfectly valid way to think about how to count in binary. Write with that pattern vertically and you're counting in binary. It's no different than how the ones and the tens places look when counting in decimal: we cycle through all digits faster in the least significant digit than in the most significant digit. Imagine an odometer in your mind as you think about counting in any number base.
-
-Converting 0b1011101 to octal looks like this. 
+To convert binary to octal (base 8) is much simpler because 8 is an even power of 2. Converting binary to octal involves grouping a binary number in to chunks of three bits from right to left, and converting each three-bit chunk into a number. For example, converting 0b1011101 to octal looks like this.
 
 Binary  | 1   | 011 | 101
 ------- | --- | --- | ---
@@ -161,7 +175,7 @@ Octal   | 1   |  3  |  5
 
 What is 0b11001011011111 in octal? Try it yourself. When you get the answer, you will be among an elite group.
 
-Linux/Unix filesystems distinguish among user (u), group (g) and other (o) permissions, where each level has read/write/execute bits. To set permissions involves using octal. For example, to allow `something_random.exe` to be readable, writable and executable by a user, readbale and executable to the group, but unavailable for others, we could execute the following command:
+> Linux/Unix filesystems distinguish among user (u), group (g) and other (o) permissions, where each level has read/write/execute bits. To set permissions involves using octal. For example, to allow `something_random.exe` to be readable, writable and executable by a user, readbale and executable to the group, but unavailable for others, we could execute the following commands.
 
 	$ chmod 750 something_random.exe
 	$ ls -la something_random.exe
@@ -170,30 +184,7 @@ Linux/Unix filesystems distinguish among user (u), group (g) and other (o) permi
 
 ## Binary to Hexadecimal
 
-To convert binary to hexadecimal is similar to converting binary to octal, except instead of grouping into chunks of 3 bits, we group into four bit chunks (known as nibbles).
-
-Binary  | Hexadecimal
-------- | -----------
-0000    | 0
-0001    | 1
-0010    | 2
-0011    | 3
-0100    | 4
-0101    | 5
-0110    | 6
-0111    | 7
-1000    | 8
-1001    | 9
-1010    | A
-1011    | B
-1100    | C
-1101    | D
-1110    | E
-1111    | F
-
-Notice how the most significant bit alternates between 8 zeroes and 8 ones? Counting in binary is worth practicing.
-
-For example, 0b1011101 in octal becomes:
+To convert binary to hexadecimal is similar to converting binary to octal, except instead of grouping into chunks of 3 bits, we group into four bit chunks (known as nibbles). For example, 0b1011101 in octal becomes:
 
 Binary  | 101  | 1101
 ------- | ---- | ----
