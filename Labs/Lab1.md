@@ -98,33 +98,19 @@ What will the next row in the table above look like?
 
 You have already seen an example of how to convert a binary number to decimal. Knowing your powers of two will make it easy to do this quickly in your head.
 
-n     | 2^n
------ | ----------------
-   -5 |   1/32 (0.03125)
-   -4 |   1/16 (0.0625)
-   -3 |    1/8 (0.125)
-   -2 |    1/4 (0.25)
-   -1 |    1/2 (0.5)
-    0 |      1
-    1 |      2
-    2 |      4
-    3 |      8 
-    4 |     16
-    5 |     32
-    6 |     64
-    7 |    128
-    8 |    256
-    9 |    512
-   10 |   1024
-   11 |   2048
-   12 |   4096
-   13 |   8192
-   14 |  16384
-   15 |  32768
-   16 |  65536
-   17 | 131072
-   18 | 262144
-   19 | 524288
+n     | 2^n               | n    | 2^n    | n    | 2^n
+----- | ----------------- | ---- | ------ | ---- | -------
+    0 |     1             |    0 |      1 |   10 |    1024
+   -1 |    1/2 (0.5)      |    1 |      2 |   11 |    2048
+   -2 |    1/4 (0.25)     |    2 |      4 |   12 |    4096
+   -3 |    1/8 (0.125)    |    3 |      8 |   13 |    8192
+   -4 |   1/16 (0.0625)   |    4 |     16 |   14 |   16384
+   -5 |   1/32 (0.03125)  |    5 |     32 |   15 |   32768
+   -6 |   1/64 (0.015625) |    6 |     64 |   16 |   65536
+   -7 |   0.0078125       |    7 |    128 |   17 |  131072
+   -8 |   0.00390625      |    8 |    256 |   18 |  262144
+   -9 |   0.001953125     |    9 |    512 |   19 |  524288
+  -10 |   0.0009765625    |   10 |   1024 |   20 | 1048576
 
 Try this on your own. What is 0b1101101 in decimal? Write out the place values under (or over) each binary digit (bit), and add up the place values corresponding to the 1's.
 
