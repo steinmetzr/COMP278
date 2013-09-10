@@ -44,7 +44,7 @@ Notice how the place values in decimal are just powers of ten. So, 10 squared is
 
 In all number bases, the place values are just powers of the base. For example, the binary number 1011.1 has the following bits (binary digits) and place values.
 
-Binary Digit | 1   | 0  | 1  | 1  |    .        | 1
+Binary Digit | 1   | 0  | 1  | 1  | .           | 1
 ------------ | --- | -- | -- | -- | ----------- | ---
 Place value  | 8   | 4  | 2  | 1  | radix point | 0.5
 
@@ -128,7 +128,7 @@ To convert a decimal number to binary, make change with powers of two. For examp
 
 At this point, to write out the binary number, just place a 1 corresponding to each place value we subtracted away, and zero elsewhere.
 
-Digit         |  1  |  0  |  0 |  0 |  1 | 0 | 1 | 1 | 0 | .           |  0  |  0   |   0   |    1   |   1
+Digit         | 1   | 0   | 0  | 0  | 1  | 0 | 1 | 1 | 0 | .           | 0   | 0    | 0     | 1      | 1
 ------------- | --- | --- | -- | -- | -- | - | - | - | - | ----------- | --- | ---- | ----- | ------ | -------
 Place value   | 256 | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 | Radix point | 0.5 | 0.25 | 0.125 | 0.0625 | 0.03125
 
@@ -155,9 +155,9 @@ An aside about counting in binary: notice how in the table above, the 1's place 
 
 Converting 0b1011101 to octal looks like this. 
 
-Binary  |  1  | 011 | 101
+Binary  | 1   | 011 | 101
 ------- | --- | --- | ---
-Octal   |  1  |  3  |  5
+Octal   | 1   |  3  |  5
 
 What is 0b11001011011111 in octal? Try it yourself. When you get the answer, you will be among an elite group.
 
@@ -195,7 +195,7 @@ Notice how the most significant bit alternates between 8 zeroes and 8 ones? Coun
 
 For example, 0b1011101 in octal becomes:
 
-Binary  |  101 | 1101
+Binary  | 101  | 1101
 ------- | ---- | ----
 Octal   |   5  |  D
 
