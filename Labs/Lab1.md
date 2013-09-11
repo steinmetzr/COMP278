@@ -4,6 +4,8 @@
 
 In this lab, we will learn how to count in and convert among Binary, Octal, Decimal and Hexadecimal number bases, and represent integers in binary.
 
+![Number conversion overview](http://lawrancej.github.io/COMP278/Images/bases.svg)
+
 > To help remember which base is which, it's helpful to know that each of these words has Latin roots in them that other words share. Binary has "bi" in it, meaning two, just like bicycle and bisexual. Octal has "oct" in it, meaning eight, just like octagon (stop sign) and October. If you forgot this piece of historical trivia, October used to be the eighth month before Julius and Augustus Caesar named months after themselves. Decimal has "deci" in it, meaning ten, like December and decimate. December used to be the tenth month just like October was the eighth month, and decimate meant kill one out of every ten soldiers as a punishment for the group (those Romans!). Hexadecimal has "hex" and "deci" in it, and "hex" means six, just like hexagon. Think 6 + 10 = 16.
 
 ## Why learn other bases?
@@ -154,6 +156,8 @@ You may think: "Hey, we're not done yet!" You're right, the binary number above 
 Try one yourself. What is 127.75 in binary? Did you notice a pattern? What's 128 in binary?
 
 You can use your hands to represent numbers from zero (two fists) to 1023 (all fingers extended) if you extend your finger for one, and close for zero using the diagram below. 
+
+![Impress your friends with your counting ability](http://lawrancej.github.io/COMP278/Images/binary-hands.svg)
 
 Try your hand (so to speak) with the following numbers:
 
