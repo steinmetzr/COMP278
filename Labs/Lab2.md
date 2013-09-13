@@ -161,7 +161,7 @@ Complete the following exercises inside of Lab2solution.txt
 3. Convert convert 0b1100 0000 0001 1010 0001 0101 1011 1010 1101 to hexadecimal.
 4. Convert 0b100 001 101 101 to octal and to decimal.
 5. Convert 0xBADF00D to binary and then to decimal.
-6. Convert 6157 to binary and then to decimal.
+6. Convert 0o6157 to binary and then to decimal.
 7. Write the truth table for the majority circuit. Assume it takes 3 inputs, a, b, c, and produces a decision about whether most of those bits are on.
 8. Convert the truth table into a logic expression.
 9. What is the truth table for adding two bits together? Convert to a logic expression.
