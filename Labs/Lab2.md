@@ -154,7 +154,13 @@ a   | a &oplus; b
 Study this function table carefully in relation to the truth table above. We shrank down a truth table without losing information by noticing that a &oplus; b is the same as b if a is false, and a &oplus; b is the inverse of b if a is true.
 
 ## Exercises
-Complete the following exercises inside of Lab2solution.txt
+In git, pull a copy of my remote repository into your local repository.
+
+	cd COMP278
+	git pull upstream master
+	start .
+
+Complete the following exercises inside of Lab2solution.txt. Use a text editor such as Notepad++ or Sublime to complete these (not Word or WordPad!).
 
 1. Convert 1590 to binary.
 2. Convert 0b101110110 to decimal.
@@ -168,7 +174,12 @@ Complete the following exercises inside of Lab2solution.txt
 10. What is the truth table for adding two bits together with a carry bit? Convert to a logic expression.
 
 
-Complete the following exercises inside of Lab2solution.circ:
+Complete the following exercises inside of Lab2solution.circ. Open that file using Logisim.
 
 1. Draw the majority circuit. Label each subexpression.
 2. Draw the the adder circuit and label each subexpression.
+
+When you are done, save your work and do the following:
+
+	git commit -am "Lab 2 complete."
+	git push --all origin
