@@ -170,14 +170,13 @@ Complete the following exercises inside of Lab2solution.txt. Use a text editor s
 6. Convert 0o6157 to binary and then to decimal.
 7. Write the truth table for the majority circuit. Assume it takes 3 inputs, a, b, c, and produces a decision about whether most of those bits are on.
 8. Convert the truth table into a logic expression.
-9. What is the truth table for adding two bits together? Convert to a logic expression.
-10. What is the truth table for adding two bits together with a carry bit? Convert to a logic expression.
-
+9. What is the truth table for adding two bits together? There will be sum and a carry out bits as the result.
+10. What is the truth table for adding two bits together with a carry in bit? There will be sum and carry out bits as well. Convert to logic expressions.
 
 Complete the following exercises inside of Lab2solution.circ. Open that file using Logisim.
 
 1. Draw the majority circuit. Label each subexpression.
-2. Draw the the adder circuit and label each subexpression.
+2. Draw the the adder circuits and label each subexpression.
 
 When you are done, save your work and do the following:
 
