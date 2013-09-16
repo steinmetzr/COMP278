@@ -4,6 +4,8 @@
 
 In this lab, we will learn how to count in and convert among Binary, Octal, Decimal and Hexadecimal number bases, and represent integers in binary.
 
+![Number conversion overview](http://lawrancej.github.io/COMP278/Images/bases.svg)
+
 > To help remember which base is which, it's helpful to know that each of these words has Latin roots in them that other words share. Binary has "bi" in it, meaning two, just like bicycle and bisexual. Octal has "oct" in it, meaning eight, just like octagon (stop sign) and October. If you forgot this piece of historical trivia, October used to be the eighth month before Julius and Augustus Caesar named months after themselves. Decimal has "deci" in it, meaning ten, like December and decimate. December used to be the tenth month just like October was the eighth month, and decimate meant kill one out of every ten soldiers as a punishment for the group (those Romans!). Hexadecimal has "hex" and "deci" in it, and "hex" means six, just like hexagon. Think 6 + 10 = 16.
 
 ## Why learn other bases?
@@ -50,7 +52,7 @@ Bit          | 1   | 0   | 1   | 1   | .           | 1
 ------------ | --- | --- | --- | --- | ----------- | ---
 Place value  | 8   | 4   | 2   | 1   | radix point | 0.5
 
-Notice how the place values in binary are powers of two.  Binary number 1011.1 is 8 * 1 + 4 * 0 + 1 * 2 + 1 * 1 + 1 * 0.5, or 11.5 in decimal. This is how we convert from binary to decimal.
+Notice how the place values in binary are powers of two.  Binary number 1011.1 is 8 * 1 + 4 * 0 + 1 * 2 + 1 * 1 + 1 * 0.5, or more simply 8 + 2 + 1 + 0.5 = 11.5 in decimal. This is how we convert from binary to decimal.
 
 When we write a number we will assume it is decimal; to label numbers in other bases, prefix it to label the base.
 
@@ -91,6 +93,8 @@ Binary | Hexadecimal | Octal | Decimal
 1111   |   F         |  17   |   15
 
 As you read from the top to the bottom, notice how in we cycle through all digits faster in the least significant digit than in the most significant digit. For example, as you read the column of numbers in the 1's place for binary numbers, it alternates between 0 and 1, the 2's place alternates between 00 and 11, and the 4's place alternates between 4 zeroes and 4 ones, and the eights place alternates between 8 zeroes and 8 ones. It's no different than how the ones and the tens places look when counting in decimal. In the table above, you should also notice the same pattern for octal numbers: in the 1's place, we cycle from 0-7; in the 8's place, we repeat 0 eight times before repeating 1 eight times, and so forth.
+
+To count in binary, write from top to bottom, not left to right, and cycle through each bit in the least significant place, and then cycle through 00, 11 in the two's place, and so forth.
 
 What will the next row in the table above look like?
 
@@ -150,6 +154,18 @@ Place value   | 256 | 128 | 64  | 32  | 16  | 8   | 4   | 2   | 1   | Radix poin
 You may think: "Hey, we're not done yet!" You're right, the binary number above is not exactly 278.1 in decimal, but it is worth noting that some fractional numbers cannot be represented exactly. For example, 1/3 in decimal is 0.3333.... We cannot represent that number in decimal, and decimal numbers such as 0.65 cannot be represented exactly in binary. This is why we care about precision when dealing with floating point numbers, and why you shouldn't use float or double for currency.
 
 Try one yourself. What is 127.75 in binary? Did you notice a pattern? What's 128 in binary?
+
+You can use your hands to represent numbers from zero (two fists) to 1023 (all fingers extended) if you extend your finger for one, and close for zero using the diagram below. 
+
+![Impress your friends with your counting ability](http://lawrancej.github.io/COMP278/Images/binary-hands.svg)
+
+Try your hand (so to speak) with the following numbers:
+
+* 4. Hey!
+* 25.
+* 31. 
+* 48. All right. :-)
+* 1023. 
 
 ## Binary to Octal
 
