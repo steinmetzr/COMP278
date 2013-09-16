@@ -166,12 +166,12 @@ Complete the following exercises inside of Lab2solution.txt. Use a text editor s
 2. Convert 0b101110110 to decimal.
 3. Convert convert 0b1100 0000 0001 1010 0001 0101 1011 1010 1101 to hexadecimal.
 4. Convert 0b100 001 101 101 to octal and to decimal.
-5. Convert 0xBADF00D to binary and then to decimal.
+5. Convert 0xBADF00D to binary and then to octal.
 6. Convert 0o6157 to binary and then to decimal.
 7. Write the truth table for the majority circuit. Assume it takes 3 inputs, a, b, c, and produces a decision about whether most of those bits are on.
 8. Convert the truth table into a logic expression.
-9. What is the truth table for adding two bits together? There will be sum and a carry out bits as the result.
-10. What is the truth table for adding two bits together with a carry in bit? There will be sum and carry out bits as well. Convert to logic expressions.
+9. What is the truth table for adding two bits together? There will be two output bits: the carry and sum. Convert each output bit to a logic expression.
+10. What is the truth table for adding two bits together with a carry in bit? There will also be two output bits: the carry out and sum. Convert each output bit to a logic expression.
 
 Complete the following exercises inside of Lab2solution.circ. Open that file using Logisim.
 
