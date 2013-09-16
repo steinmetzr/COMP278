@@ -125,7 +125,7 @@ To convert a logic expression to a circuit diagram.
 6. Repeat steps 2-5 until done evaluating the expression.
 
 ## Expression to circuit diagram
-In Logisim, draw this expression as a circuit: x+y*z'
+In Logisim, draw this expression as a circuit: x'+y*z
 
 * This is **Right**:
  ![What you should see](http://lawrancej.github.io/COMP278/Images/logicly-diagram-right.png)
