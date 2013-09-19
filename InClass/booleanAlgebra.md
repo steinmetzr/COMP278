@@ -19,3 +19,4 @@ DeMorgan's         | (a + b)' = a' * b'          | (a*b)' = a' + b'
 2. Show c + (b * c)' = 1
 3. Show (a + c) * (a * d + a * d') + a * c + c = a + c
 4. Simplify a' * (a + b) + (b + a * a) * (a + b')
+5. Show c + (b * c)' = 1
