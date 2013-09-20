@@ -31,7 +31,6 @@ Use the laws above to simplify expressions.
 2. Show c + (b * c)' = 1
 3. Show (a + c) * (a * d + a * d') + a * c + c = a + c
 4. Simplify a' * (a + b) + (b + a * a) * (a + b')
-5. Show c + (b * c)' = 1
 
 Complete the following exercises using Logisim. Open Lab3solution.circ in this folder.
 
