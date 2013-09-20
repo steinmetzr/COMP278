@@ -25,7 +25,7 @@ In git, pull a copy of my remote repository into your local repository.
 
 Complete the following exercises inside of Lab3solution.txt. Use a text editor such as Notepad++ or Sublime to complete these (not Word or WordPad!).
 
-Use the laws above to simplify expressions.
+Use the laws above to simplify expressions. Label the laws that you apply as you apply them (no more than one law per line).
 
 1. Show (a * b)' * (a' + b) * (b' + b) = a'
 2. Show c + (b * c)' = 1
