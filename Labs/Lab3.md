@@ -33,7 +33,12 @@ Use the laws above to simplify expressions.
 4. Simplify a' * (a + b) + (b + a * a) * (a + b')
 5. Show c + (b * c)' = 1
 
-Complete the following exercises inside of Lab3solution.circ.
+Complete the following exercises using Logisim. Open Lab3solution.circ in this folder.
 
 1. Implement the majority circuit using a 4-1 multiplexer.
 2. Implement a full adder (a + b + cin) using a 4-1 multiplexer.
+
+When you are done, save your work and do the following:
+
+	git commit -am "Lab 3 complete."
+	git push --all origin
