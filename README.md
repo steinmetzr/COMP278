@@ -12,4 +12,5 @@ If you see this in your own private repository, you are almost done with Lab 0!
 * **September 12** Perform addition and subtraction in binary, octal and hexadecimal.
 * **September 13/16** [Lab 2](https://github.com/lawrancej/COMP278/blob/master/Labs/Lab2.md).
 * **September 17** Boolean algebra introduction.
-* **September 19** [Boolean algebra practice](https://github.com/lawrancej/COMP278/blob/master/InClass/booleanAlgebra.md).
+* **September 19** Multiplexers.
+* **September 20/23** [Boolean algebra and multiplexer practice](https://github.com/lawrancej/COMP278/blob/master/Labs/Lab3.md).
