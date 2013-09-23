@@ -1,0 +1,32 @@
+1. (a*b)*(a'+b)*(b'+b) = a'
+   (a*b)*(a'+b) = a'			Complement
+   (a*b*a')+(a*b*b) = a'		Distributive
+   (a*b*a')+(a*b) = a'			Indempotence
+   (0*b)+(a*b) = a'				Complement
+   b*(0+a) = a'
+   
+2. c+(b*c)' = 1
+   c+(b'+c') = 1				DeMorgan's
+   
+   (c+b')*(c+c') = 1			Distributive
+   (c+b')*1 = 1					Complement
+   (c+b') = 1
+   
+3. (a+c)*(a*d+a*d')+a*c+c = a+c
+   (a+c)*(a*d+a*d')+(a+c)*(c+c) = a+c	Distributive
+   (a+c)*((a*d+a*d')+(c+c)) = a+c		Distributive
+   (a+c)*((a*d+a*d')+c) = a+c			Idempotence
+   (a+c)*(a*(d+d')+c) = a+c				Distributive
+   (a+c)*(a*1+c) = a+c					Complement
+   (a+c)*(a+c) = a+c					Identity
+   a+c = a+c							Indempotence
+   
+4. a'*(a+b)+(b+a*a)*(a+b')
+   a'*(a+b)+(b+a)*(a+b')				Indempotence
+   a'*(a+b)+(a+(b*b'))					Distributive
+   a'*(a+b)+(a+0)						Complement
+   a'*(a+b)+a							Identity
+   (a+'a)*(a+a+b)						Distributive
+   1*(a+a+b)							Complement
+   1*(a+b)								Indempotence
+   a+b									Identity
