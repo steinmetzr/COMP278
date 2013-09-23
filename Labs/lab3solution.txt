@@ -1,16 +1,13 @@
-1. (a*b)*(a'+b)*(b'+b) = a'
-   (a*b)*(a'+b) = a'			Complement
-   (a*b*a')+(a*b*b) = a'		Distributive
-   (a*b*a')+(a*b) = a'			Indempotence
-   (0*b)+(a*b) = a'				Complement
-   b*(0+a) = a'
+1. (a*b)'*(a'+b)*(b'+b) = a'
+   (a*b)'*(a'+b) = a'					Complement
+   (a'+b')*(a'+b) = a'					DeMorgan's
+   a'+(b'*b) = a'						Distributive
+   a' = a'								Complement
    
 2. c+(b*c)' = 1
-   c+(b'+c') = 1				DeMorgan's
-   
-   (c+b')*(c+c') = 1			Distributive
-   (c+b')*1 = 1					Complement
-   (c+b') = 1
+   c+b'+c' = 1							DeMorgan's
+   1+b' = 1								Complement
+   1 = 1 								Identity
    
 3. (a+c)*(a*d+a*d')+a*c+c = a+c
    (a+c)*(a*d+a*d')+(a+c)*(c+c) = a+c	Distributive
