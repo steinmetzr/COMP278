@@ -34,7 +34,7 @@ Use the laws above to simplify expressions. Label the laws that you apply as you
 
 Complete the following exercises using Logisim. Open Lab3solution.circ in this folder.
 
-1. Implement the majority circuit using a 4-1 multiplexer.
+1. Implement the majority (of 3 input bits) circuit using a 4-1 multiplexer.
 2. Implement a full adder (a + b + cin) using two 4-1 multiplexers (one for each output).
 
 When you are done, save your work and do the following:
