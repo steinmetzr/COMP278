@@ -21,7 +21,7 @@ Load/Store (Bus control)
 1100aaaammmmmmmm  LOAD Ra, mmm       Ra = RAM[mmm]
 1101aaaa00000000  LOAD Ra            Ra = RAM[Ra]
 
-Not sure?
+Store instructions (TODO)
 1110aaaammmmmmmm  STOR Ra, mmm       RAM[mmm] = Ra
 1111aaaa00000000  STOR Ra            RAM[Ra & 0xff] = Ra
 
