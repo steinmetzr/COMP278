@@ -1,5 +1,9 @@
 # Lab 1: Number representation
 
+## Background
+
+Read chapter 3 of the [Science of Computing](http://lawrancej.github.io/COMP278/Resources/ScienceOfComputing.pdf).
+
 ## Overview: All your number base are belong to us
 
 In this lab, we will learn how to count in and convert among Binary, Octal, Decimal and Hexadecimal number bases, and represent integers in binary.
@@ -23,7 +27,7 @@ CD-ROM  | Pit/land edge     | Non-edge       | Edge
 RAM     | Electric charge   | Negative       | Positive
 Finger  | Position          | Closed         | Extended
 
-Octal is found in permissions in Linux/Unix, useful for system administrators.
+Linux/Unix uses octal to represent read/write/execute permissions for users, groups, and others.
 
 Hexadecimal is a compact number representation that is found in IPv6 addresses, SHA hashes, and so forth.
 
